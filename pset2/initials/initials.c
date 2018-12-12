@@ -3,3 +3,6 @@
 #include <cs50.h>
 
 //user get_string
+{
+    string name
+}
