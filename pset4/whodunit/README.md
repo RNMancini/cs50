@@ -2,7 +2,7 @@
 
 ## What's `stdint.h`?
 
-TODO
+'stdint.h' is a header file in the C standard library
 
 ## What's the point of using `uint8_t`, `uint32_t`, `int32_t`, and `uint16_t` in a program?
 
