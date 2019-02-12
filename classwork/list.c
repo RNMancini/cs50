@@ -14,13 +14,18 @@ int pop(Node*);
 int main(void)
 {
     printf("Hello\n");
-    struct Node* head = NULL;
-    struct Node* second = NULL;
-    struct Node* third = NULL;
+    Node* list = NULL;
 
-    head = (struct Node*)malloc(sizeof(struct Node));
-    second = (struct Node*)malloc(sizeof(struct Node));
-    third = (struct Node*)malloc(sizeof(struct Node));
+    push(3, list);
+    push(12, list);
+    printf("%i\n", pop(list));
+    push(14, list);
+    printf("%i\n", pop(list));
+    freeList(list)
+
+    // head = (struct Node*)malloc(sizeof(struct Node));
+    // second = (struct Node*)malloc(sizeof(struct Node));
+    // third = (struct Node*)malloc(sizeof(struct Node));
 
     head->data = 5;
     head->next = NULL;
@@ -33,16 +38,16 @@ int main(void)
     // second->next = third;
     // third->next = NULL;
     // third->data = 9
-    push(11, head);
-    printf("%i\n", pop(head));
-    freeList(head);
+    // push(11, head);
+    // printf("%i\n", pop(head));
+    //freeList(head);
 }
 
-void push(int data, struct Node* head)
+void push(int data, Node* head)
 {
-    struct Node* trav = head;
+    Node* trav = head;
 
-    while(trav->next != NULL)
+    while(trav->next != NULL && trav != NULL)
     {
         trav = trav->next;
     }
@@ -50,16 +55,28 @@ void push(int data, struct Node* head)
     // trav->next = (struct Node*)malloc(sizeof(struct Node))
     // trav->next->data = data
     // trav->next->next = NULL;
-    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    Node* newNode = (Node*)malloc(sizeof(Node));
     newNode->data = data;
     newNode->next = NULL;
+    if (trav == NULL)
+    {
+        head = newNode;
+        return;
+    }
     trav->next = newNode;
 }
 
-int pop(struct Node* head)
+int pop(Node* head)
 {
-    struct Node* trav = head;
+    Node* trav = head;
 
+    if (trav->next == NULL) {
+        return -1;
+    }
+        temp = trav->data;
+        free(trav);
+        return  temp;
+    }
     // find the second to last node
     while (trav->next->next != NULL)
     {
