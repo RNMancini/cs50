@@ -107,3 +107,14 @@ void freeList(Node* root)
     free(root);
     return;
 }
+
+void freeListNew(Node* trav)
+{
+        if (trav->next == NULL)
+        {
+            free(trav);
+            return
+        }
+        freeListNew(trav->next);
+        free(trav);
+}

@@ -168,3 +168,8 @@ void bruteForceTree()
         return;
     }
 }
+
+void freeTree()
+{
+    //to free all heap nodes from the tree.
+}
