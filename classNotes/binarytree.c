@@ -172,4 +172,20 @@ void bruteForceTree()
 void freeTree()
 {
     //to free all heap nodes from the tree.
+
+    root = malloc(sizeof(BinaryNode));
+    root->data = 5;
+
+    BinaryNode* leftNode = malloc(sizeof(BinaryNode));
+    leftNode->data = 2;
+    leftNode->smaller = NULL;
+    leftNode->larger = NULL;
+
+    BinaryNode* rightNode = malloc(sizeof(BinaryNode));
+    rightNode->data = 8;
+    rightNode->smaller = NULL;
+    rightNode->larger = NULL;
+
+    root->smaller = leftNode;
+    root->larger = rightNode;
 }
